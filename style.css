@@ -1,0 +1,1761 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Raleway:wght@300;400;600;700&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html{
+    scroll-padding-top: 5.9rem;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    background-color: #181818;
+}
+
+
+:root{
+
+
+
+
+
+    --gradient: linear-gradient(
+        45deg,
+        
+        #181818,
+        #737373
+
+        
+    );
+
+
+    --gradient2: linear-gradient(
+        95deg,
+
+        rgb(202, 198, 198),
+        #737373,
+        #181818
+        
+    );
+
+    --w:#181818;
+
+}
+
+
+.tudo{
+    overflow: hidden;
+}
+
+
+
+
+
+/* loader*/
+
+
+ 
+  #preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#242323; /* cor do background que vai ocupar o body */
+    z-index:999; /* z-index para jogar para frente e sobrepor tudo */
+}
+#preloader .inner {
+    position: absolute;
+    top: 50%; /* centralizar a parte interna do preload (onde fica a animação)*/
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+.bolas > div {
+  display: inline-block;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin: 3px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: animarBola;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+   
+}
+.bolas > div:nth-child(1) {
+    animation-duration:0.75s ;
+    animation-delay: 0;
+}
+.bolas > div:nth-child(2) {
+    animation-duration: 0.75s ;
+    animation-delay: 0.12s;
+}
+.bolas > div:nth-child(3) {
+    animation-duration: 0.75s  ;
+    animation-delay: 0.24s;
+}
+ 
+@keyframes animarBola {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  16% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  33% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; 
+  } 
+}
+
+
+/* end: Preloader */
+
+
+
+
+
+
+/* header*/
+
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    left: 0; right:0; top: 0;
+    width: 100vw;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+   
+}
+
+header nav{
+    margin-right: 120px;
+
+    
+}
+
+header img{
+    margin-left: 140px;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    padding: 20px;
+    margin-right:35px ;
+
+}
+.menu li a{
+    text-decoration: none;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 120px;
+    transition: 0.5s;
+}
+
+
+#menu-bars{
+display: none;
+font-size: 24px;
+    
+}
+
+.linha1::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    background-color: #9B1219;
+    display: block;
+    position: absolute;
+    top: 35px;
+    transition: 0.5s;
+}
+ .linha1:hover:after{
+     width: 50px;
+ }
+
+ .linha1:hover{
+     transform: scale(0.97);
+ }
+
+.logo{
+    color: #9B1219;
+    list-style: none;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+.logo:hover{
+    transform: scale(0.98);
+
+}
+
+
+
+
+
+
+/* home*/
+
+
+
+
+
+
+.home{
+    
+    margin-top: 120px;
+  
+}
+
+.card{
+    background-color: #181818;
+}
+
+.bemvindo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.bemvindo h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.bemvindo:hover h1{
+    transform: scale(0.92);
+
+}
+
+.bemvindo img{
+    padding-top: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0; left: 0;   
+    padding: 230px 0;
+    
+}
+
+.video-bg{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    z-index: -1;
+}
+
+.video-bg video{
+    opacity: 0.7;
+}
+
+
+
+
+@media (min-aspect-ratio:16/9){
+    .video-bg video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9){
+    .video-bg video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio:4/3){
+    .video-bg video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:4/3){
+    .video-bg video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+
+
+@media (max-width:1351px){
+
+    .hero{
+      
+        padding: 130px 0 200px 0;
+        
+    }
+
+}
+
+
+@media (max-width:1121px){
+    .video-bg video{
+        width: 1200px;
+        height: auto;
+        max-width: 1200px;
+    }
+
+
+    
+
+    .hero{
+      
+        padding: 100px 0 200px 0;
+        
+    }
+}
+
+
+
+@media (max-width:1024px){
+    .video-bg video{
+        width: 1200px;
+        height: auto;
+        max-width: 1200px;
+    }
+
+
+    .hero{
+      
+        padding: 100px 0 200px 0;
+        
+    }
+}
+
+
+
+@media (max-width:700px){
+
+
+.home{
+    
+    margin-top: 20px;
+  
+}
+
+    .video-bg video{
+        display: none;
+        min-width:0;
+    max-width: 0;
+    }
+
+    .hero{
+        background-image: url(frames/basilica3.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 230px 0 ;
+    }
+  
+
+}
+
+
+
+
+/* animação fade in */
+
+.fade-in{
+    opacity:0;
+    transition: opacity 150ms ease-in;
+   }
+
+.fade-in.appear{
+    opacity:1;
+   }
+
+/* animação fade in up */
+
+
+.slide-in{
+    opacity:0;
+    transform: translateY(30%);
+    transition: opacity 180ms ease-in-out;
+   }
+
+.slide-in.appear{
+    transform: translateY(0);
+    opacity:1;
+   }
+
+
+
+/* sobre*/
+
+
+
+
+.sobre {
+    
+    background-color: #181818 ;
+    box-shadow:inset 0px 20px 23px rgba(182, 41, 41, 0.391);
+    z-index: 2000;
+    
+}
+
+.sobre .container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 150px;
+    
+    
+    
+}
+
+
+.titulo{
+    padding-top: 60px;
+    margin-bottom: 50px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.titulo h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: 13px;
+    color: #BE4C4C;
+}
+
+.titulo h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+
+.subtitulo{
+   
+    color: aliceblue;
+    text-align: center;    
+    padding: 20px;
+    font-size: 100%;
+    
+}
+
+.subtitulo h3{
+    margin-top: 35px;
+    font-family: 'montserrat' sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.75;
+    opacity: 0.8;
+    font-size: 25px;
+
+}
+
+.subtitulo h3 span{
+    color: #BE4C4C;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 29px;
+}
+
+.subtitulo h1{
+
+    font-size: 39px;
+    font-family: 'montserrat', sans-serif;
+    text-align: justify;
+}
+
+
+
+
+.sobre .imgs{
+    width: 100%;
+    display: flex;
+    transition: 0.3s;
+    padding-bottom: 50px;
+    
+}
+
+
+/*
+
+/* reduzir otamanho das imagens para não pesar o site*/
+
+
+.imgs .fts:nth-child(1) img{
+    width:250px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 17px rgba(16, 16, 16, 0.629);
+}
+.imgs .fts:nth-child(2) img{
+    width:280px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 17px rgba(16, 16, 16, 0.629);
+
+}
+.imgs .fts:nth-child(3) img{
+    width:250px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 17px rgba(16, 16, 16, 0.629);
+}
+
+
+
+
+
+
+
+.imgs .fts:nth-child(1){
+    margin-left: 90px;
+    margin-top: -100px;
+    
+
+}
+
+.imgs .fts:nth-child(2){
+    margin-top: 10px;
+    margin-left: -30px;
+    z-index: 100;
+    
+    
+}
+
+.imgs .fts:nth-child(3){
+    margin-left: -435px;
+    margin-top: 190px;
+}
+
+
+
+
+/*  sobre
+ Nossa equipe
+ */
+
+.equipe{
+    background-color: #242323;
+    box-shadow:inset 0px 20px 23px rgba(182, 41, 41, 0.391);
+    background-image: url(basilica21.png);
+    background-size:cover;
+    background-position: center;
+    width:100%; height:100%;
+    
+}
+
+
+
+
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+    row-gap: 100px;
+    flex-wrap: wrap;
+    padding: 60px;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+.titulo2{
+    padding-top: 40px;
+    margin-bottom: 60px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.titulo2 h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: 13px;
+    color: #BE4C4C;
+}
+
+.titulo2 h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.titulo2 h1:nth-child(2){
+    letter-spacing: 8px;
+}
+
+
+
+
+
+
+.card{
+    position: relative;
+    background-color: rgb(58, 58, 58);
+    width: 360px;
+    height: 440px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 0.4s;
+    box-shadow:20px 20px 50px rgba(0,0,0,0.5);
+    background:rgba(255, 255, 255, 0.047);
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left:1px solid rgba(255, 255, 255, 0.284);
+    backdrop-filter:blur(5px);
+    
+  
+}
+
+.card .content{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imgbox{
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: rgb(52, 52, 52);
+    border-radius: 100%;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.422);
+    overflow: hidden;
+}
+.imgbox img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.card  .content .details {
+    text-align: center;
+    transform: translateY(125px);
+    transition: 0.5s;
+}
+
+
+.card .content .details h2 {
+
+    color: aliceblue;
+    line-height: 35px;
+    margin: 0 0 12px;
+
+}
+
+.card .content .details .nome span::before{
+    position: absolute;
+    text-align: center;
+    content: '' ;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background-color: rgb(205, 205, 205);
+    color: aqua;
+    display: block;
+    margin: -1 auto;
+    transition: 0.5s;
+}
+
+
+.card .content .details span{
+    font-weight: 100;
+    opacity: 0.7;
+}
+
+.card .content .data{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 0 0;
+    margin: 20px 40px -10px 40px;
+   
+}
+.card .content .data h3{
+color: rgb(243, 243, 243);
+font-size: 24px;
+font-weight: 400;
+font-family: 'Raleway', sans-serif;
+}
+
+
+.card .content .actbtn{
+    padding: 40px;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+    transition: 0.5s;
+}
+.card .content .actbtn button{
+    z-index: 13;
+    padding: 10px;
+    width: 160px;
+    height: 70px;
+    font-size: 22px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-image:var(--gradient);
+    background-size: 250%;
+    background-position: left;
+    opacity: 0.6;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.422);
+    transition: 0.5s ease-in-out;
+
+}
+.card .content .actbtn button:hover:nth-child(1) {
+
+    width: 168px;
+    height: 67px;
+    background-position: right;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.422);
+    cursor: pointer;
+
+
+}
+
+.card .content .actbtn button:hover:nth-child(2) {
+
+
+    width: 108px;
+    height: 67px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.422);
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+/*  protifolio */
+
+.portifolio .container{
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows:100px 300px;
+    grid-gap:1px;
+    grid-auto-flow: dense;
+}
+
+.portifolio .gallery-item{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.portifolio .gallery-item .image{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.portifolio .gallery-item .image img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position:50% 50%;
+    cursor:pointer;
+    transition:.5s ease-in-out;
+}
+.gallery-item:hover .image img{
+    transform:scale(1.02);
+}
+
+.gallery-item .text{
+    opacity:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    font-size:25px;
+    pointer-events:none;
+    z-index:4;
+    transition: .3s ease-in-out;
+    -webkit-backdrop-filter: blur(5px) saturate(1.8);
+    backdrop-filter: blur(5px) saturate(1.8);
+}
+
+.gallery-item:hover .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity:1;
+    padding:1em;
+    width:100%;
+    height: 100%;
+}
+
+.w-1{
+    grid-column: span 1;
+}
+.w-2{
+    grid-column: span 2;
+}
+.w-3{
+    grid-column: span 3;
+}
+.w-4{
+    grid-column: span 4;
+}
+.w-5{
+    grid-column: span 5;
+}
+.w-6{
+    grid-column: span 6;
+}
+
+.h-1{
+    grid-row: span 1;
+}
+.h-2{
+    grid-row: span 2;
+}
+.h-3{
+    grid-row: span 3;
+}
+.h-4{
+    grid-row: span 4;
+}
+.h-5{
+    grid-row: span 5;
+}
+.h-6{
+    grid-row: span 6;
+}
+
+
+
+
+
+/*  contatos */
+
+
+.contatos{
+    background-color: #181818 ;
+    box-shadow:inset 0px 20px 23px rgba(182, 41, 41, 0.391);
+    z-index: 2001;
+    padding: 30px 200px;
+}
+
+.contatos .box-contatos{
+    padding:0 50px 20px 50px ;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+        background-color: rgb(58, 58, 58);
+        border-radius: 20px;
+        transition: 0.4s;
+        box-shadow:20px 20px 50px rgba(0,0,0,0.5);
+        background:rgba(255, 255, 255, 0.047);
+        border-top:1px solid rgba(255,255,255,0.5);
+        border-left:1px solid rgba(255, 255, 255, 0.284);
+        backdrop-filter:blur(5px);
+
+}
+
+.contatos .box-contatos .whats a,
+.contatos .box-contatos .insta a{
+    font-size: 38px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 60px 0;
+    text-align: justify;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+
+}
+
+.contatos .box-contatos .whats a:hover,
+.contatos .box-contatos .insta a:hover{
+
+color: #9B1219;
+
+}
+
+
+.contatos .contatos-esquerda{
+    margin-top: 30px;
+}
+
+
+.contatos .box-contatos .whats h3,
+.contatos .box-contatos .insta h3{
+    text-align: justify;
+    letter-spacing: 2px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+    flex-wrap: nowrap;
+    padding-left: 60px;
+
+}
+
+
+.contatos .box-contatos .whats .fa-solid,
+.contatos .box-contatos .insta .fa-solid{
+    margin-left: -5px;
+    margin-top: 70px;
+}
+
+
+.contatos .box-contatos .whats i,
+.contatos .box-contatos .insta i{
+    font-size: 50px;
+    text-decoration: none;
+    color: #eee;
+    
+
+}
+
+
+
+.contatos .box-contatos .btn{
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+
+}
+
+
+
+.contatos .box-contatos .btn button{
+    padding: 30px;
+    border-radius: 11px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    border: #737373;
+    background-image:var(--gradient2);
+    background-size: 250%;
+    background-position: left;
+    opacity: 0.6;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.593);
+    transition: 0.5s ease-in-out;
+
+}
+
+.contatos .box-contatos .btn button a{
+    text-decoration: none;
+    color: rgb(58, 22, 22);
+    transition: 0.5s ease-in-out;
+}
+
+.contatos .box-contatos .btn button:hover{
+
+    background-position: right;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.422);
+    cursor: pointer;
+    transform: scale(0.98);
+
+} 
+
+.contatos .box-contatos .btn button:hover a{
+
+    color: #eee;
+}
+
+
+
+
+
+
+.contatos .cel img{
+    width: 100%;
+
+}
+
+.contatos .cel{
+    padding: 35px ;
+    width: 500px;
+}
+
+
+
+
+
+
+/*  grande */
+@media (min-width:2000px){
+    .sobre .container{
+        padding: 50px;
+    }
+
+
+    .sobre .container .imgs{
+        padding-left: 90px;
+    }
+
+
+.imgs .fts:nth-child(1) {
+    margin-left: 35px;
+    margin-top: -60px;
+
+}
+
+.imgs .fts:nth-child(2) {
+    margin-left: -55px;
+    margin-top: 50px;
+
+}
+
+.imgs .fts:nth-child(3){
+    margin-left: -55px;
+    margin-top: -120px;
+}
+
+
+}
+
+
+/*  medio */
+
+
+
+@media (max-width:1450px){
+    .sobre .container{
+        display: block;
+    }
+
+    .sobre .imgs{
+        margin-top: 180px;
+        margin-right: 100px;
+        justify-content: center;
+    }   
+
+    .titulo{
+        margin-bottom: 0px;
+        
+    }
+
+    .subtitulo{
+   
+        margin-top: -50px;
+        
+    }
+
+    
+
+
+    
+.imgs .fts:nth-child(3){
+        margin-left: -15px;
+        margin-top: -40px;
+    }
+.imgs .fts:nth-child(3) img{
+        width:270px;
+        border-radius: 10px;
+    }
+
+    
+.imgs .fts:nth-child(2) img{
+        width:330px;
+        border-radius: 10px;}
+
+.imgs .fts:nth-child(1) img{
+    width:250px;
+    
+}
+.imgs .fts:nth-child(2) img{
+    width:280px;
+   
+
+}
+.imgs .fts:nth-child(3) img{
+    width:250px;
+    
+}
+
+
+
+
+
+
+    
+     
+
+}
+
+/*  sobre
+ Nossa equipe
+ */
+
+
+ 
+
+
+
+
+
+ /* medio*/
+
+@media (max-width:1200px){
+    
+    header{
+        padding: 10px;
+    }
+    
+    .logo img{
+        margin-left: 15px;
+        width: 100px;
+
+    }
+
+    .subtitulo{
+   
+        margin-top: 40px;
+        padding: 0 60px;
+        
+    }
+
+    .subtitulo h1{
+        text-align: center;
+
+    }
+
+
+
+
+
+
+    .contatos .box-contatos h3{
+        font-size: 29px;
+
+    }
+
+    .contatos .box-contatos .whats i,
+.contatos .box-contatos .insta i{
+    font-size: 50px;
+    text-decoration: none;
+    color: #eee;
+    
+
+}
+
+
+.contatos .box-contatos .whats h3,
+.contatos .box-contatos .insta h3{
+    padding: 0 0 0 60px;
+}
+
+.contatos .box-contatos .btn{
+    padding: 50px;
+}
+
+.contatos .box-contatos .btn button{
+    padding: 20px;
+    font-size: 25px;
+
+}
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* quase mobile*/
+
+@media (max-width:950px){
+
+
+
+    header #menu-bars{
+        display: inline-block;
+        position: absolute;
+        top: 15px; right:65px;
+        cursor: pointer;
+        
+    }
+
+
+    header nav { 
+        position: absolute;
+        top:82%; left: 0; 
+        margin-top: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: 0.3s;
+    }
+
+    header .menu{
+        display: block;
+        width: 100vw;
+        justify-content: center;
+        padding: 0;
+        background-color: #242323bd;
+    }
+
+    header nav.active{
+        z-index: 20000;
+        clip-path: polygon(0 0, 100% 0, 100% 100% , 0 100%);
+    }
+
+    header nav .menu li a{
+        padding: 1rem;
+        background-color: #2d2c2ce9;
+        border-radius: 6px;
+        text-align: center;
+        margin: .6rem 0 0 0;
+    }
+
+    .logo img{
+        margin-left: 15px;
+        width: 100px;
+    }
+
+
+
+
+
+
+    .bemvindo h1{
+        font-size: 25px;
+    }
+
+
+    .bemvindo img{
+        width: 100%;
+    }
+
+
+
+
+
+
+     /* titulo2*/
+
+    
+    .titulo2 h1{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        letter-spacing: 13px;
+        color: #BE4C4C;
+    }
+    
+    .titulo2 h3{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+    }
+    
+
+
+    /* sobre*/
+
+    
+   
+   
+
+    .sobre .container{
+        margin-top: 100px;
+        margin: 0 10px 0 10px;
+    }
+
+    .sobre .imgs{
+        transform: scale(0.7);
+        margin-top: 60px;
+        margin-left: -30px;
+    }
+
+    .sobre .subtitulo h1{
+        font-size: 24px;
+
+    }
+
+    .sobre .subtitulo h3{
+        font-size: 17px;
+    }
+
+    .sobre .subtitulo h3 span{
+        font-size: 18px;
+    }
+
+    
+
+
+
+
+/* card*/
+
+
+
+
+    .card{
+        position: relative;
+        font-size: 80%;
+        background-color: rgb(58, 58, 58);
+        width: 320px;
+        height: 419px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: 0.4s;
+        box-shadow:20px 20px 50px rgba(0,0,0,0.5);
+        background:rgba(255, 255, 255, 0.047);
+        border-top:1px solid rgba(255,255,255,0.5);
+        border-left:1px solid rgba(255, 255, 255, 0.284);
+        backdrop-filter:blur(5px);
+        
+      
+    }
+
+
+
+
+
+.card .content .data{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 0 0;
+    margin: 20px 40px -10px 40px;
+   
+}
+.card .content .data h3{
+font-size: 19px;
+}
+
+
+.card .content .actbtn{
+    padding: 40px;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+    transition: 0.5s;
+}
+.card .content .actbtn button{
+    padding: 10px;
+    width: 160px;
+    height: 60px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+   
+
+}
+
+
+.sobre .container{
+    grid-template-columns: repeat(1fr);
+}
+.w-1,.w-2,.w-3,.w-4,.w-5,.w-6{
+    grid-column:span 6;
+}
+
+
+.contatos .box-contatos h3{
+    font-size: 23px;
+
+}
+
+.contatos .box-contatos .whats i,
+.contatos .box-contatos .insta i{
+    font-size: 38px;
+    text-decoration: none;
+    color: #eee;
+    
+    
+}
+
+.contatos .box-contatos .whats h3,
+.contatos .box-contatos .insta h3{
+    padding: 0 0;
+    padding-left: 50px;
+
+}
+
+
+
+.contatos .box-contatos .whats a,
+.contatos .box-contatos .insta a{
+    padding: 30px 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+
+}
+
+
+
+.contatos{
+    background-color: #181818 ;
+    box-shadow:inset 0px 20px 23px rgba(182, 41, 41, 0.391);
+    z-index: 2001;
+    padding: 30px 100px;
+}
+
+
+
+}
+
+
+
+/* tablet*/
+
+
+@media (max-width:600px){
+
+
+
+    .bemvindo img{
+        width: 50%;
+        max-width: 500px;
+    }
+
+
+
+
+
+
+
+    .contatos{
+        padding: 30px;
+    }
+    
+    .contatos .box-contatos{
+        padding:20px;
+    }
+    
+    .contatos .box-contatos .whats,
+    .contatos .box-contatos .insta{
+        font-size: 38px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        text-align: justify;
+    
+    }
+    
+    .contatos .contatos-esquerda{
+        margin-top: 30px;
+    }
+    
+    
+    .contatos .box-contatos .whats h3,
+    .contatos .box-contatos .insta h3{
+        text-align: justify;
+        letter-spacing: 2px;
+        font-weight: 600;
+        flex-wrap: nowrap;
+        padding-left: 30px;
+    
+    
+    }
+    
+    .contatos .box-contatos .whats i,
+    .contatos .box-contatos .insta i{
+        font-size: 50px;
+        text-decoration: none;
+        color: #eee;
+        
+    
+    }
+    
+    
+    .contatos .box-contatos .whats a,
+.contatos .box-contatos .insta a{
+   
+    padding: 30px 0;
+    
+
+}
+    
+    
+    
+    
+    
+    .contatos .box-contatos .btn{
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+    
+    }
+    
+    
+    
+    .contatos .box-contatos .btn button{
+        padding: 15px;
+        border-radius: 11px;
+        font-size: 20px;
+        font-weight: 600;
+        font-family: 'Raleway', sans-serif;
+        outline: none;
+        border: #737373;
+        background-image:var(--gradient2);
+        background-size: 250%;
+        background-position: left;
+        opacity: 0.6;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.593);
+        transition: 0.5s ease-in-out;
+    
+    }
+    
+ 
+    
+    
+    
+    
+
+}
+
+
+
+/* mobile G*/
+
+
+
+@media (max-width:466px){
+    
+    .logo{
+        
+        margin-left: 5px;
+        
+    }
+
+
+    header #menu-bars{
+        
+        display: inline-block;
+        position: absolute;
+        top: 15px; right:45px;
+        cursor: pointer;
+        
+    }
+    
+    
+    
+    
+    /* sobre*/
+
+    .subtitulo{
+   
+        margin-top: 40px;
+        padding: 0 15px;
+        
+    }
+
+    .subtitulo h1{
+        font-size: 10px;
+    }
+
+
+    /* contatos*/
+
+
+    .contatos .box-contatos h3{
+        font-size: 19px;
+
+    }
+
+    .contatos .box-contatos .whats i,
+.contatos .box-contatos .insta i{
+    font-size: 27px;
+    text-decoration: none;
+    color: #eee;
+}
+
+
+.contatos .box-contatos .whats a,
+.contatos .box-contatos .insta a{
+   
+    padding: 30px 0;
+    
+}
+
+.contatos .box-contatos .whats a,
+.contatos .box-contatos .insta a{
+    padding: 0 0;
+    
+}
+
+
+.contatos .box-contatos .btn{
+    padding: 26px;
+}
+
+.contatos .box-contatos .btn button{
+    padding: 17px;
+    font-size: 15px;
+}
+
+
+.contatos .box-contatos{
+    padding:10px;
+}
+
+
+}
+
+
+
+
+/* mobile s*/
+
+
+@media (max-width:330px){
+
+    /* Titulo*/
+
+    .titulo h1{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 13px;
+        color: #BE4C4C;
+    }
+    
+    .titulo h3{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 23px;
+    }
+
+
+    .subtitulo{
+   
+        margin-top: 40px;
+        padding: 0 10px;
+        
+    }
+
+
+
+
+
+    /* Titulo2*/
+
+    .titulo2 h1{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 13px;
+        color: #BE4C4C;
+    }
+    
+    .titulo2 h3{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+
+
+
+    /* contatos*/
+
+
+    .contatos .box-contatos h3{
+        font-size: 14px;
+
+    }
+
+    .contatos .box-contatos .whats i,
+.contatos .box-contatos .insta i{
+    font-size: 20px;
+    text-decoration: none;
+    color: #eee;
+    
+
+}
+
+.contatos .box-contatos .btn{
+    padding: 20px;
+}
+
+.contatos .box-contatos .btn button{
+    padding: 10px;
+    font-size: 15px;
+
+}
+
+    
+
+}

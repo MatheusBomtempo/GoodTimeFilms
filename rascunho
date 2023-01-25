@@ -1,0 +1,162 @@
+section .sobre{
+    background-color: #242323;
+    
+}
+
+.titulo{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+
+}
+
+.titulo h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: 13px;
+    color: #BE4C4C;
+
+}
+
+.titulo h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+
+}
+.sobre .grid{
+    margin-top: -50px;
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    
+}
+
+.subtitulo{
+    position: relative;
+    color: aliceblue;
+    text-align: center;    
+    
+}
+
+.subtitulo h3{
+    position: absolute;
+    font-weight: 100;
+    text-align: justify;
+    line-height: 2.45;
+    opacity: 0.8;
+    top: 340px;
+    left: 60px;
+    font-size: 24px;
+
+}
+
+.subtitulo h3 span{
+    color: #BE4C4C;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+
+.subtitulo h1{
+    position: absolute;
+    font-size: 37px;
+    top: 230px;
+    left: 60px; 
+    font-family: 'montserrat', sans-serif;
+}
+.subtitulo h1 span{
+
+    color: rgb(180, 180, 180);
+}
+
+
+
+.imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.imgs .fts:nth-child(1) img{
+    position: absolute;
+    border-radius: 10px;
+    top: 100px;
+    left: 290px;
+
+}
+.imgs .fts:nth-child(2) img{
+    position: absolute;
+    border-radius: 10px;
+    top: 240px;
+    left: 550px;
+
+}
+.imgs .fts:nth-child(3) img{
+    position: absolute;
+    border-radius: 10px;
+    top: 350px;
+    left: 130px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////
+
+
+
+
+
+
+
+
+
+.banner{
+    overflow: hidden;
+}
+
+.banner video {
+    position: absolute;
+    opacity: 0.4;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+
+@media (min-aspect-ratio:16/9){
+    .banner video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9){
+    .banner video{
+        width: auto;
+        height: 100%;
+    }
+}
